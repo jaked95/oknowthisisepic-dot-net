@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ok now this epic dot net</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script>
+    $( document ).ready( function() {
+      var mostRecent = 1;
+      var current = mostRecent;
+
+      $( ".gallery-pic ").load("pics-html/p" + current + ".html");
+
+      $( ".gallery-controls .previous").click( function() {
+        console.log("BACK");
+
+        if( current == mostRecent ) {
+          current = mostRecent;
+        } else {
+          current++;
+          $( ".gallery-pic").load("pics-html/p" + current + ".html");
+        }
+      });
+
+      $( ".gallery-controls .next").click( function() {
+        console.log("FORWARD");
+
+        if( current == 0 ) {
+          current = 0;
+        } else {
+          current--;
+          $( ".gallery-pic").load("pic-html/p" + current + ".html");
+        }
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+
+  <section class="gallery">
+    <div class="gallery-controls">
+      <div class="previous"><</div>
+      <div class="next">></div>
+    </div>
+
+    <div class="gallery-pic">
+      <!-- stinnydoody -->
+    </div>
+  </section>
+
+</body>
+</html>
